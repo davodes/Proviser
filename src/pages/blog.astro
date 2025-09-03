@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { Calendar, Clock, ArrowRight, User } from 'lucide-astro';
+
+const blogPosts = [
+  {
+    id: 1,
+    title: 'Tendencias en Construcción Sostenible 2025',
+    excerpt: 'Descubre las últimas innovaciones en materiales ecológicos y técnicas de construcción sostenible que están revolucionando el sector.',
+    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '15 Enero 2025',
+    readTime: '5 min',
+    author: 'Carlos Martínez',
+    category: 'Sostenibilidad'
+  },
+  {
+    id: 2,
+    title: 'Guía Completa para Rehabilitación Energética',
+    excerpt: 'Todo lo que necesitas saber sobre ayudas, procesos y beneficios de la rehabilitación energética de edificios.',
+    image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '10 Enero 2025',
+    readTime: '8 min',
+    author: 'Ana García',
+    category: 'Rehabilitación'
+  },
+  {
+    id: 3,
+    title: 'Normativa de Construcción: Actualizaciones 2025',
+    excerpt: 'Análisis de los cambios normativos más importantes que afectan a la construcción y obra civil este año.',
+    image: 'https://images.pexels.com/photos/1089840/pexels-photo-1089840.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '5 Enero 2025',
+    readTime: '6 min',
+    author: 'Miguel Rodríguez',
+    category: 'Normativa'
+  },
+  {
+    id: 4,
+    title: 'Tecnología BIM en Proyectos de Construcción',
+    excerpt: 'Cómo la metodología BIM está transformando la planificación y ejecución de proyectos constructivos.',
+    image: 'https://images.pexels.com/photos/840996/pexels-photo-840996.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '28 Diciembre 2024',
+    readTime: '7 min',
+    author: 'Carlos Martínez',
+    category: 'Tecnología'
+  },
+  {
+    id: 5,
+    title: 'Seguridad en Obra: Protocolo de Prevención',
+    excerpt: 'Medidas y protocolos esenciales para garantizar la seguridad de trabajadores y visitantes en obras de construcción.',
+    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '20 Diciembre 2024',
+    readTime: '4 min',
+    author: 'Ana García',
+    category: 'Seguridad'
+  },
+  {
+    id: 6,
+    title: 'Materiales Innovadores en Construcción',
+    excerpt: 'Exploramos los nuevos materiales que están revolucionando la industria de la construcción por su durabilidad y sostenibilidad.',
+    image: 'https://images.pexels.com/photos/1216584/pexels-photo-1216584.jpeg?auto=compress&cs=tinysrgb&w=600',
+    date: '15 Diciembre 2024',
+    readTime: '6 min',
+    author: 'Miguel Rodríguez',
+    category: 'Materiales'
+  }
+];
+
+const categories = ['Todos', 'Sostenibilidad', 'Rehabilitación', 'Normativa', 'Tecnología', 'Seguridad', 'Materiales'];
+---
+
+<Layout
+  title="Blog - Proviser | Actualidad y Tendencias en Construcción"
+  description="Mantente informado sobre las últimas tendencias, normativas y tecnologías en construcción y obra civil. Blog especializado de Proviser."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20 bg-gradient-to-r from-primary-600 to-primary-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Blog <span class="text-primary-300">Proviser</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto">
+          Actualidad, tendencias y conocimiento especializado en construcción y obra civil
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Filter -->
+  <section class="py-8 bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-4">
+        {categories.map((category) => (
+          <button class="px-4 py-2 rounded-full text-sm font-medium text-gray-600 border border-gray-300 hover:bg-primary-50 hover:border-primary-300 hover:text-primary-600 transition-colors">
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogPosts.map((post) => (
+          <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <div class="overflow-hidden">
+              <img 
+                src={post.image}
+                alt={post.title}
+                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 bg-primary-100 text-primary-600 text-sm font-medium rounded-full">
+                  {post.category}
+                </span>
+                <div class="flex items-center text-sm text-gray-500">
+                  <Clock class="w-4 h-4 mr-1" />
+                  {post.readTime}
+                </div>
+              </div>
+              
+              <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors">
+                {post.title}
+              </h2>
+              
+              <p class="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+                {post.excerpt}
+              </p>
+              
+              <div class="flex items-center justify-between">
+                <div class="flex items-center text-sm text-gray-500">
+                  <User class="w-4 h-4 mr-1" />
+                  <span>{post.author}</span>
+                  <Calendar class="w-4 h-4 ml-3 mr-1" />
+                  <span>{post.date}</span>
+                </div>
+                <button class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors group">
+                  Leer más
+                  <ArrowRight class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 bg-primary-600">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Mantente Informado
+        </h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Suscríbete a nuestro boletín y recibe las últimas noticias del sector de la construcción
+        </p>
+        <div class="max-w-md mx-auto">
+          <form class="flex gap-4">
+            <input
+              type="email"
+              placeholder="Tu email"
+              class="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white/50 outline-none"
+            />
+            <button class="px-6 py-3 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+              Suscribirse
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

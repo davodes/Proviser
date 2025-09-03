@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import { Users, Award, Shield, Clock, Phone } from 'lucide-astro';
+
+const services = [
+  {
+    title: 'Edificación',
+    description: 'Construcción de edificios residenciales y comerciales con los más altos estándares de calidad.',
+    icon: '<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>',
+    link: '/edificacion',
+    features: ['Viviendas unifamiliares', 'Edificios residenciales', 'Locales comerciales', 'Gestión de licencias']
+  },
+  {
+    title: 'Rehabilitación',
+    description: 'Reforma integral de edificios y viviendas, devolviendo la vida a espacios con historia.',
+    icon: '<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v2a1 1 0 01-1 1h-1v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8H3a1 1 0 01-1-1V5a1 1 0 011-1h4zM9 10v8h2v-8H9zm4 0v8h2v-8h-2z"></path></svg>',
+    link: '/rehabilitacion',
+    features: ['Reforma integral', 'Eficiencia energética', 'Accesibilidad', 'Mantenimiento']
+  },
+  {
+    title: 'Urbanización y Obra Civil',
+    description: 'Infraestructuras urbanas y civiles que conectan comunidades y mejoran la calidad de vida.',
+    icon: '<svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2l6 3 5.447-2.724A1 1 0 0121 3.618v10.764a1 1 0 01-.553.894L15 18l-6-3z"></path></svg>',
+    link: '/urbanizacion-y-obra-civil',
+    features: ['Carreteras y viales', 'Redes de abastecimiento', 'Espacios públicos', 'Movimiento de tierras']
+  }
+];
+
+const values = [
+  {
+    icon: Shield,
+    title: 'Calidad Garantizada',
+    description: 'Trabajamos con los mejores materiales y técnicas más avanzadas del sector'
+  },
+  {
+    icon: Clock,
+    title: 'Cumplimiento de Plazos',
+    description: 'Respetamos los tiempos acordados sin comprometer la calidad del trabajo'
+  },
+  {
+    icon: Users,
+    title: 'Equipo Profesional',
+    description: 'Contamos con un equipo altamente cualificado y con amplia experiencia'
+  },
+  {
+    icon: Award,
+    title: 'Certificaciones',
+    description: 'Todas nuestras obras cumplen con la normativa vigente y certificaciones de calidad'
+  }
+];
+---
+
+<Layout
+  title="Proviser - Construcción y Obra Civil | Especialistas en Edificación"
+  description="Empresa líder en construcción, rehabilitación y obra civil en Madrid. Más de 15 años de experiencia. Solicita tu presupuesto sin compromiso."
+>
+  <Header />
+  <Hero />
+  
+  <!-- Services Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Nuestros Servicios
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ofrecemos soluciones integrales de construcción adaptadas a las necesidades 
+          específicas de cada cliente y proyecto
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+
+      <div class="text-center">
+        <a href="/nosotros" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+          Conoce más sobre nosotros
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          ¿Por qué elegir Proviser?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Nuestro compromiso con la excelencia nos convierte en la mejor opción para tu proyecto
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value) => (
+          <div class="text-center group">
+            <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+                <value.icon class="w-8 h-8 text-primary-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{value.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-600">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          ¿Listo para empezar tu proyecto?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Contacta con nosotros hoy mismo y recibe un presupuesto personalizado sin compromiso
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contacto" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+            Solicitar Presupuesto
+          </a>
+          <a href="tel:+34911234567" class="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 transition-colors">
+            <Phone class="w-5 h-5 mr-2" />
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</Layout>

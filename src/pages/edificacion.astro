@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import { Building, CheckCircle, Home, Users, Shield, Clock } from 'lucide-astro';
+---
+
+<Layout
+  title="Edificación - Proviser | Construcción de Edificios y Viviendas"
+  description="Especialistas en construcción de edificios residenciales y comerciales. Proyectos llave en mano con la máxima calidad y garantía."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20 bg-gradient-to-r from-primary-600 to-primary-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Edificación <span class="text-primary-300">de Calidad</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-primary-100 mb-8 leading-relaxed">
+          Construimos viviendas y edificios que superan las expectativas, 
+          combinando diseño innovador con técnicas constructivas avanzadas.
+        </p>
+        <a href="#contacto" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          Solicitar Presupuesto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Especialistas en Edificación Integral
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Desde la concepción hasta la entrega de llaves, nos encargamos de todo el proceso constructivo 
+            con la máxima atención al detalle y cumpliendo los más altos estándares de calidad.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <CheckCircle class="w-6 h-6 text-success-500 mt-1" />
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Viviendas Unifamiliares</h3>
+                <p class="text-gray-600">Diseño y construcción personalizada de casas familiares</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <CheckCircle class="w-6 h-6 text-success-500 mt-1" />
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Edificios Residenciales</h3>
+                <p class="text-gray-600">Promociones de viviendas y edificios multifamiliares</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <CheckCircle class="w-6 h-6 text-success-500 mt-1" />
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Locales Comerciales</h3>
+                <p class="text-gray-600">Espacios comerciales funcionales y atractivos</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <CheckCircle class="w-6 h-6 text-success-500 mt-1" />
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Gestión Integral</h3>
+                <p class="text-gray-600">Tramitación de licencias y gestión completa del proyecto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img 
+            src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Edificio moderno construido por Proviser"
+            class="rounded-2xl shadow-xl"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Nuestro Proceso de Trabajo
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Un enfoque sistemático y profesional que garantiza el éxito en cada fase del proyecto
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">1</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Consulta Inicial</h3>
+          <p class="text-gray-600">Analizamos tus necesidades y definimos el alcance del proyecto</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">2</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Diseño y Planificación</h3>
+          <p class="text-gray-600">Desarrollamos el proyecto arquitectónico y la planificación técnica</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">3</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Ejecución</h3>
+          <p class="text-gray-600">Construcción con supervisión constante y control de calidad</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-2xl font-bold text-white">4</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Entrega</h3>
+          <p class="text-gray-600">Entrega del proyecto con garantías y servicio post-venta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Proyectos de Edificación Destacados
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-xl">
+            <img 
+              src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Edificio residencial moderno"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-lg font-semibold text-gray-900">Edificio Residencial Las Flores</h3>
+            <p class="text-gray-600">48 viviendas de lujo con eficiencia energética A</p>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-xl">
+            <img 
+              src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Casa unifamiliar moderna"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-lg font-semibold text-gray-900">Villa Mediterránea</h3>
+            <p class="text-gray-600">Casa unifamiliar de lujo con diseño sostenible</p>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-xl">
+            <img 
+              src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Centro comercial"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+          <div class="mt-4">
+            <h3 class="text-lg font-semibold text-gray-900">Centro Comercial Plaza Mayor</h3>
+            <p class="text-gray-600">Complejo comercial con espacios multifuncionales</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</Layout>

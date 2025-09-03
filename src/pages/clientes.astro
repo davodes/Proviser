@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import { Star, Quote, ArrowRight, Building, Home, Road } from 'lucide-astro';
+
+const testimonials = [
+  {
+    name: 'María González',
+    role: 'Propietaria',
+    project: 'Rehabilitación Edificio Residencial',
+    rating: 5,
+    comment: 'Excelente trabajo en la rehabilitación de nuestro edificio. Cumplieron con los plazos y la calidad superó nuestras expectativas.',
+    image: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=300'
+  },
+  {
+    name: 'Javier López',
+    role: 'Director de Desarrollo',
+    project: 'Construcción Centro Comercial',
+    rating: 5,
+    comment: 'Profesionalidad máxima en cada fase del proyecto. Su equipo técnico es excepcional y la gestión impecable.',
+    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300'
+  },
+  {
+    name: 'Carmen Ruiz',
+    role: 'Alcaldesa',
+    project: 'Urbanización Barrio Nuevo',
+    rating: 5,
+    comment: 'Han transformado completamente nuestro municipio. La calidad de la obra civil y el respeto por los plazos han sido extraordinarios.',
+    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300'
+  }
+];
+
+const projects = [
+  {
+    title: 'Edificio Residencial Las Flores',
+    type: 'Edificación',
+    location: 'Madrid',
+    image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600',
+    description: '48 viviendas de lujo con certificación energética A',
+    specs: ['48 viviendas', '5 plantas', 'Garaje subterráneo', 'Zonas verdes'],
+    icon: Building
+  },
+  {
+    title: 'Villa Mediterránea',
+    type: 'Vivienda Unifamiliar',
+    location: 'Majadahonda',
+    image: 'https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=600',
+    description: 'Casa unifamiliar de diseño moderno con piscina y jardín',
+    specs: ['350 m²', '5 habitaciones', 'Piscina', 'Domótica'],
+    icon: Home
+  },
+  {
+    title: 'Vial de Acceso A-6',
+    type: 'Obra Civil',
+    location: 'Las Rozas',
+    image: 'https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=600',
+    description: 'Nueva carretera de acceso con rotonda y señalización',
+    specs: ['2.5 km', 'Doble carril', 'Rotonda', 'Señalización LED'],
+    icon: Road
+  }
+];
+
+const clients = [
+  'Ayuntamiento de Madrid',
+  'Grupo Inmobiliario Vanguardia',
+  'Constructora San Martín',
+  'Desarrollos Urbanos del Sur',
+  'Comunidad de Madrid',
+  'Grupo Hospitalario La Paz',
+  'Universidad Complutense',
+  'Metro de Madrid'
+];
+---
+
+<Layout
+  title="Clientes - Proviser | Proyectos Realizados y Testimonios"
+  description="Conoce los proyectos realizados por Proviser y las opiniones de nuestros clientes satisfechos. Portfolio completo de obras de construcción."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20 bg-gradient-to-r from-success-600 to-success-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Nuestros <span class="text-success-300">Clientes</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-success-100 max-w-3xl mx-auto">
+          La confianza de nuestros clientes es nuestro mayor logro. 
+          Descubre los proyectos que hemos realizado juntos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Proyectos Destacados
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Una selección de nuestros trabajos más representativos que demuestran 
+          nuestra experiencia y calidad en diferentes tipos de proyectos
+        </p>
+      </div>
+
+      <div class="space-y-16">
+        {projects.map((project, index) => (
+          <div class={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+            <div class={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+              <div class="flex items-center mb-4">
+                <project.icon class="w-6 h-6 text-primary-600 mr-3" />
+                <span class="text-sm font-medium text-primary-600 uppercase tracking-wide">{project.type}</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{project.title}</h3>
+              <p class="text-lg text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+              
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                {project.specs.map((spec) => (
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-2 h-2 bg-primary-400 rounded-full mr-2"></div>
+                    {spec}
+                  </div>
+                ))}
+              </div>
+              
+              <div class="flex items-center text-sm text-gray-500 mb-6">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                {project.location}
+              </div>
+              
+              <button class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors group">
+                Ver Detalles
+                <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+            
+            <div class={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+              <img 
+                src={project.image}
+                alt={project.title}
+                class="w-full h-96 object-cover rounded-2xl shadow-xl"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Lo que dicen nuestros clientes
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          La satisfacción de nuestros clientes es la mejor validación de nuestro trabajo
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-center mb-4">
+              {Array.from({ length: testimonial.rating }).map(() => (
+                <Star class="w-5 h-5 text-yellow-400 fill-current" />
+              ))}
+            </div>
+            
+            <Quote class="w-8 h-8 text-primary-600 mb-4" />
+            
+            <p class="text-gray-600 mb-6 leading-relaxed italic">
+              "{testimonial.comment}"
+            </p>
+            
+            <div class="flex items-center">
+              <img 
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full object-cover mr-4"
+                loading="lazy"
+              />
+              <div>
+                <h4 class="font-semibold text-gray-900">{testimonial.name}</h4>
+                <p class="text-sm text-gray-600">{testimonial.role}</p>
+                <p class="text-sm text-primary-600">{testimonial.project}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Confían en nosotros
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {clients.map((client) => (
+          <div class="bg-gray-50 rounded-lg p-6 text-center hover:bg-gray-100 transition-colors">
+            <div class="text-gray-700 font-medium">{client}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</Layout>

@@ -1,0 +1,94 @@
+---
+import { Building2, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-astro';
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <Building2 class="w-8 h-8 text-primary-400" />
+          <span class="text-xl font-bold text-white">Proviser</span>
+        </div>
+        <p class="text-gray-400 leading-relaxed">
+          Empresa líder en construcción y obra civil con más de 15 años de experiencia. 
+          Comprometidos con la calidad, seguridad y excelencia en cada proyecto.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+            <Facebook class="w-5 h-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+            <Instagram class="w-5 h-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+            <Linkedin class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Nuestros Servicios</h3>
+        <ul class="space-y-2">
+          <li><a href="/edificacion" class="text-gray-400 hover:text-white transition-colors">Edificación</a></li>
+          <li><a href="/rehabilitacion" class="text-gray-400 hover:text-white transition-colors">Rehabilitación</a></li>
+          <li><a href="/urbanizacion-y-obra-civil" class="text-gray-400 hover:text-white transition-colors">Urbanización y Obra Civil</a></li>
+          <li><a href="/clientes" class="text-gray-400 hover:text-white transition-colors">Proyectos Realizados</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Empresa</h3>
+        <ul class="space-y-2">
+          <li><a href="/nosotros" class="text-gray-400 hover:text-white transition-colors">Acerca de Nosotros</a></li>
+          <li><a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Términos de Servicio</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Contacto</h3>
+        <div class="space-y-3">
+          <div class="flex items-start space-x-3">
+            <MapPin class="w-5 h-5 text-primary-400 mt-0.5" />
+            <div>
+              <p class="text-gray-400">Calle de la Construcción 123</p>
+              <p class="text-gray-400">28001 Madrid, España</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <Phone class="w-5 h-5 text-primary-400" />
+            <a href="tel:+34911234567" class="text-gray-400 hover:text-white transition-colors">+34 91 123 45 67</a>
+          </div>
+          <div class="flex items-center space-x-3">
+            <Mail class="w-5 h-5 text-primary-400" />
+            <a href="mailto:info@proviser.es" class="text-gray-400 hover:text-white transition-colors">info@proviser.es</a>
+          </div>
+          <div class="flex items-start space-x-3">
+            <Clock class="w-5 h-5 text-primary-400 mt-0.5" />
+            <div>
+              <p class="text-gray-400">Lun - Vie: 8:00 - 18:00</p>
+              <p class="text-gray-400">Sáb: 9:00 - 14:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-400 text-sm">
+        © 2025 Proviser Construcción y Obra Civil. Todos los derechos reservados.
+      </p>
+      <div class="flex space-x-4 mt-4 md:mt-0 text-sm">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Política de Cookies</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Aviso Legal</a>
+      </div>
+    </div>
+  </div>
+</footer>

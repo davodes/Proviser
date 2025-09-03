@@ -1,0 +1,226 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import { Home, Zap, Accessibility, Wrench, CheckCircle, Battery, Thermometer, Droplet } from 'lucide-astro';
+---
+
+<Layout
+  title="Rehabilitación - Proviser | Reforma Integral de Edificios y Viviendas"
+  description="Especialistas en rehabilitación y reforma integral. Mejoramos la eficiencia energética, accesibilidad y confort de tu hogar o edificio."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20 bg-gradient-to-r from-construction-600 to-construction-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <span class="text-construction-300">Rehabilitación</span> Integral
+        </h1>
+        <p class="text-xl md:text-2xl text-construction-100 mb-8 leading-relaxed">
+          Damos nueva vida a edificios y viviendas, mejorando su eficiencia energética, 
+          accesibilidad y confort con las técnicas más avanzadas.
+        </p>
+        <a href="#contacto" class="inline-flex items-center px-8 py-4 bg-white text-construction-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          Evaluar mi Proyecto
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Servicios de Rehabilitación
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Transformamos espacios obsoletos en modernos y eficientes, 
+          adaptándolos a las necesidades actuales
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div class="bg-gray-50 rounded-xl p-6 text-center group hover:bg-primary-50 transition-colors">
+          <Zap class="w-12 h-12 text-construction-600 mx-auto mb-4" />
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Eficiencia Energética</h3>
+          <p class="text-gray-600 text-sm">Aislamiento térmico y acústico, ventanas de alta eficiencia</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 text-center group hover:bg-primary-50 transition-colors">
+          <Accessibility class="w-12 h-12 text-construction-600 mx-auto mb-4" />
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Accesibilidad</h3>
+          <p class="text-gray-600 text-sm">Instalación de ascensores, rampas y eliminación de barreras</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 text-center group hover:bg-primary-50 transition-colors">
+          <Home class="w-12 h-12 text-construction-600 mx-auto mb-4" />
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Reforma Integral</h3>
+          <p class="text-gray-600 text-sm">Renovación completa de interiores y exteriores</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 text-center group hover:bg-primary-50 transition-colors">
+          <Wrench class="w-12 h-12 text-construction-600 mx-auto mb-4" />
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Mantenimiento</h3>
+          <p class="text-gray-600 text-sm">Servicios de mantenimiento preventivo y correctivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img 
+            src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Antes y después de rehabilitación"
+            class="rounded-2xl shadow-xl"
+            loading="lazy"
+          />
+        </div>
+        
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Beneficios de la Rehabilitación
+          </h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <Battery class="w-8 h-8 text-construction-600 mt-1" />
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Ahorro Energético</h3>
+                <p class="text-gray-600">Reduce hasta un 60% el consumo energético con nuestras soluciones de aislamiento y sistemas eficientes.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <Thermometer class="w-8 h-8 text-construction-600 mt-1" />
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Confort Térmico</h3>
+                <p class="text-gray-600">Mejora significativa en el confort interior mediante sistemas de climatización eficientes.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <Shield class="w-8 h-8 text-construction-600 mt-1" />
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Seguridad Estructural</h3>
+                <p class="text-gray-600">Refuerzo y actualización de estructuras según normativa vigente.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <Droplet class="w-8 h-8 text-construction-600 mt-1" />
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Impermeabilización</h3>
+                <p class="text-gray-600">Soluciones avanzadas contra humedades y filtraciones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Transformaciones Realizadas
+        </h2>
+        <p class="text-xl text-gray-600">
+          Casos reales de rehabilitación que demuestran nuestro compromiso con la excelencia
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Project 1 -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-gray-900">Edificio Histórico Centro Madrid</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm font-medium text-gray-500 mb-2">ANTES</p>
+              <img 
+                src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Edificio antes de rehabilitación"
+                class="w-full h-48 object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500 mb-2">DESPUÉS</p>
+              <img 
+                src="https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Edificio después de rehabilitación"
+                class="w-full h-48 object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Mejora eficiencia energética del 65%
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Instalación de ascensor
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Renovación completa de fachada
+            </li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-gray-900">Vivienda Unifamiliar Majadahonda</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-sm font-medium text-gray-500 mb-2">ANTES</p>
+              <img 
+                src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Casa antes de rehabilitación"
+                class="w-full h-48 object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500 mb-2">DESPUÉS</p>
+              <img 
+                src="https://images.pexels.com/photos/323772/pexels-photo-323772.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Casa después de rehabilitación"
+                class="w-full h-48 object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Ampliación de 80 m²
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Sistema de domótica integral
+            </li>
+            <li class="flex items-center text-sm text-gray-600">
+              <CheckCircle class="w-4 h-4 text-success-500 mr-2" />
+              Jardín y piscina nuevos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</Layout>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.proviser.es/sitemap-index.xml
+
+# Optimización para motores de búsqueda
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/
